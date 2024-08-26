@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ysabeau Infant', sans-serif;
+}
+
+main {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --branco: #fff;
+    --branco-traparente: #ffffffcc;
+    --preto: #000000;
+    --preto-traparente: #000000;
+    --preto-traparente: #000000cc;
+    --preto-traparente: #0200006e;
+    --amarelo: #ffdf00;
+    --verde: #009c3b;
+}
+
+.secao-banner {
+    font-family: 'Ysabeau Infant', san;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.secao-banner video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -3;
+}
+
+.container-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 768px;
+    margin-top: 40px;
+    gap: 20px;
+}
+
+.container-links a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 10px;
+    
+    position: relative;
+    color: var(--branco);
+}
+
+.container-links a::before {
+    content: "";
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    border: 1px;
+    border-radius: 16px;
+    background-color: var(--preto-traparente);
+    opacity: 1;
+    z-index: -1;
+}
+
+.container-links a:hover {
+    background-color: var(--preto);
+    color: var(--branco);
+    border-radius: 16px;
+}
+
+
+
+h1, h2 {
+    color: var(--branco);
+    text-shadow:    1px 1px 5px var(--preto);
+    font-size: 32px;
+    
+}
+
+.img {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    z-index: -2;  
+}
+
+.img::before{
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: radial-gradient(circle, 
+                            #009c3b, 
+                            #ffdf00);
+    border-radius: 100%;
+    z-index: -1;
+
+}
+.img::after{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: white;
+    border-radius: 100%;
+    z-index: -1;
+    
+}
+
+
+.img img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+    border-radius: 100%;
+}
+
+/* Parte 2 */
+.secao-estatistica {
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+
+    background-image: url(/assents/img/imagem-de-fundo.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.img-fundo, .img-fundo img {
+    width: 100%;
+}
+
+th {
+    padding: 20px;
+    text-align: center;
+    background-color: var(--preto-traparente);
+    font-weight: bold;
+}
+
+td {
+    padding: 20px;
+    text-align: center;
+}
+tr:nth-of-type(odd) {
+    background-color: var(--branco-traparente);
+    font-weight: bold;
+}
+tr:nth-last-of-type(even) {
+    background-color: var(--preto-traparente);
+    color: var(--branco);
+    font-weight: bold;
+}
+
+footer {
+    display: flex;
+    width: 100%;
+    opacity: 0.8;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: var(--branco);
+    background-color: var(--preto-traparente);
+}
+
+span {
+    font-weight: bold;
+}
