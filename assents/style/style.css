@@ -5,12 +5,6 @@
     font-family: 'Ysabeau Infant', sans-serif;
 }
 
-main {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 :root {
     --branco: #fff;
     --branco-traparente: #ffffffcc;
@@ -23,14 +17,13 @@ main {
 }
 
 .secao-banner {
-    font-family: 'Ysabeau Infant', san;
     width: 100%;
     height: 100vh;
+    flex-wrap: wrap;
+    flex: 1 1 0;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    position: relative;
 }
 
 .secao-banner video {
@@ -38,152 +31,190 @@ main {
     height: 100%;
     object-fit: cover;
     position: absolute;
-    z-index: -3;
+    z-index: -1;
 }
 
 .container-info {
+    width: 768px;
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    gap: 40px;
 }
 
-.container-links {
+/* Estilo da imagem de Perfil */
+.imgPerfil-titulo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 20px;
+}
 
-    width: 768px;
-    margin-top: 40px;
+.imgPerfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    
+    background-image: url(/assents/img/neymar.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.imgPerfil::before {
+    content: "";
+    position: absolute;
+    width: 215px;
+    height: 215px;
+    border-radius: 100%;
+    background: linear-gradient(90deg,#ffdf00, #009c3b);
+    z-index: -1;
+}
+
+.imgPerfil-titulo h1 {
+    position: relative;
+    font-size: 50px;
+    color: var(--branco);
+    text-shadow: 2px 6px 3px var(--preto);
+}
+
+h1::before {
+    content: "";
+    position: absolute;
+    width: 55px;
+    height: 5px;
+    bottom: 2px;
+    left: 5px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #ffdf00, #009c3b);
+}
+
+.imgPerfil-titulo h1::after {
+    content: "";
+    position: absolute;
+    bottom: 12px;
+    right: -20px;
+    background-image: url(/assents/img/verificado.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+}
+
+/* Estilo dos Links */
+.container-links {
+    max-width: 768px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 20px;
 }
 
 .container-links a {
     width: 100%;
+    padding: 10px;
+
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    padding: 10px;
+    gap: 5px;
     
-    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+
+    border-radius: 20px;
     color: var(--branco);
-}
-
-.container-links a::before {
-    content: "";
-    opacity: 1;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-
-    border: 1px;
-    border-radius: 16px;
     background-color: var(--preto-traparente);
-    opacity: 1;
-    z-index: -1;
 }
 
 .container-links a:hover {
-    background-color: var(--preto);
-    color: var(--branco);
-    border-radius: 16px;
+    background-color: var(--branco);
+    color: var(--preto);
 }
 
-
-
-h1, h2 {
-    color: var(--branco);
-    text-shadow:    1px 1px 5px var(--preto);
-    font-size: 32px;
-    
+.container-links a p {
+    width: 90%;
 }
 
-.img {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    z-index: -2;  
+.container-links a img {
+    width: 30px;
 }
 
-.img::before{
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    background: radial-gradient(circle, 
-                            #009c3b, 
-                            #ffdf00);
-    border-radius: 100%;
-    z-index: -1;
-
-}
-.img::after{
-    content: "";
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    background: white;
-    border-radius: 100%;
-    z-index: -1;
-    
-}
-
-
-.img img {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 20px;
-    border-radius: 100%;
-}
 
 /* Parte 2 */
-.secao-estatistica {
-    font-family: 'Montserrat', sans-serif;
+.secao-tabela {
+    position: relative;
     width: 100%;
     height: 100vh;
+    text-align: center;
+    
     display: flex;
     flex-direction: column;
-    gap: 40px;
     align-items: center;
+    justify-content: center;
+    gap: 40px;
+    font-family: 'Montserrat', sans-serif;
 
     background-image: url(/assents/img/imagem-de-fundo.jpg);
-    background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    background-position: center;
+
+    
 }
 
-.img-fundo, .img-fundo img {
-    width: 100%;
+.secao-tabela h2 {
+    font-size: 74px;
+    text-shadow: 2px 2px 1px #000000;
+    color: var(--branco);
 }
 
-th {
-    padding: 20px;
-    text-align: center;
+
+.tabela th {
+    font-size: 26px;
+    color: var(--branco-traparente);
     background-color: var(--preto-traparente);
-    font-weight: bold;
+    text-shadow: 2px 2px 1px #000000;
 }
 
-td {
+.tabela th, tr, td {
     padding: 20px;
-    text-align: center;
 }
-tr:nth-of-type(odd) {
-    background-color: var(--branco-traparente);
-    font-weight: bold;
+
+.tabela td img {
+    width: 30px;
 }
-tr:nth-last-of-type(even) {
+
+.tabela tbody td:nth-child(1){
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tabela tbody tr:nth-of-type(odd) {
+    font-weight: 700;
+    font-size: 18px;
+    background-color: var(--branco);
+    color: var(--preto);
+}
+
+.tabela tbody tr:nth-last-of-type(even) {
+    font-weight: 700;
+    font-size: 18px;
     background-color: var(--preto-traparente);
     color: var(--branco);
-    font-weight: bold;
 }
+
+/* Rodapé */
 
 footer {
     display: flex;
